@@ -37,7 +37,7 @@ public class Grafo {
 		
     	inicializando();
 		
-		for (int i = 0; i < n; i++){
+		while(scanner.hasNext()) {
 			int u = scanner.nextInt();
 			int v = scanner.nextInt();
 			if(temPeso)
@@ -105,7 +105,7 @@ public class Grafo {
         //g.inserirAresta(1, 2, 1);
     	
     	//criando a partir de um arquivo  
-    	Grafo g = new Grafo("matriz.txt");
+    	Grafo g = new Grafo("matrizDijkstra.txt");
         System.out.println(g);
     }
     
