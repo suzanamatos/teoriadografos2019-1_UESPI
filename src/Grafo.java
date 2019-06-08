@@ -62,22 +62,17 @@ public class Grafo {
     
     //inserindo aresta entre o vertice i e j
     //a matriz começa do zero, porém o usuário começa do nó 1
-    public boolean inserirAresta(int _i, int _j, double _peso) {
-    	if(_i <= 0 || _j <= 0){
-        	System.out.println("[inserirAresta] Esse vértice não existe! (" + _i + " ou " + _j + ")");
-    		return false;
-    	}
-    	
+    public boolean inserirAresta(int _i, int _j, double _peso) {    	
     	if(_i == _j){
         	System.out.println("[inserirAresta] Não pode haver laço.");
     		return false;
     	}
     	
-    	if((_i <= n) && (_j <= n)){
-    		matriz[_i-1][_j-1] = _peso; 
+    	if((_i < n) && (_j < n)){
+    		matriz[_i][_j] = _peso; 
     		
     		if(!ehOrientado){
-    			matriz[_j-1][_i-1] = _peso;
+    			matriz[_j][_i] = _peso;
     		}
     		return true;
     	}
